@@ -1,0 +1,84 @@
+const mongoose = require('mongoose');
+const dotenv = require('dotenv');
+const Vehicle = require('./models/Vehicle');
+
+dotenv.config();
+
+const vehicles = [
+  {
+    name: 'Cyber Roadster X',
+    brand: 'Tesla',
+    type: 'electric',
+    pricePerDay: 15000,
+    availability: true,
+    description: 'The Cyber Roadster X represents the pinnacle of electric performance. With blistering acceleration and futuristic aesthetic.',
+    images: ['https://images.unsplash.com/photo-1560958089-b8a1929cea89?w=800&q=80'],
+    fuelType: 'Electric',
+    seats: 2,
+    transmission: 'automatic',
+    rating: 4.9
+  },
+  {
+    name: 'Neon Phantom',
+    brand: 'Rolls Royce',
+    type: 'luxury',
+    pricePerDay: 29900,
+    availability: true,
+    description: 'Experience ultimate luxury with the Neon Phantom. A statement of elegance and silent power.',
+    images: ['https://images.unsplash.com/photo-1503376625866-17b5f13458e0?w=800&q=80'],
+    fuelType: 'Petrol',
+    seats: 4,
+    transmission: 'automatic',
+    rating: 5.0
+  },
+  {
+    name: 'Stellar SUV',
+    brand: 'Range Rover',
+    type: 'SUV',
+    pricePerDay: 12000,
+    availability: true,
+    description: 'Perfect for long road trips and off-road adventures without compromising on comfort.',
+    images: ['https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&q=80'],
+    fuelType: 'Hybrid',
+    seats: 7,
+    transmission: 'automatic',
+    rating: 4.8
+  },
+  {
+    name: 'Aero Sedan',
+    brand: 'BMW',
+    type: 'sedan',
+    pricePerDay: 9000,
+    availability: true,
+    description: 'The Aero Sedan offers a balanced mix of performance and practicality for everyday city driving.',
+    images: ['https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800&q=80'],
+    fuelType: 'Electric',
+    seats: 5,
+    transmission: 'automatic',
+    rating: 4.6
+  }
+];
+
+const seedDB = async () => {
+  try {
+    await mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/mydb');
+    
+    // Clear existing vehicles if you want a clean start, or just insert
+    // await Vehicle.deleteMany({});
+    
+    const count = await Vehicle.countDocuments();
+    if (count === 0) {
+      await Vehicle.insertMany(vehicles);
+      console.log('Database seeded with vehicles successfully!');
+    } else {
+      console.log('Database already has vehicles, skipping seed.');
+    }
+    
+    process.exit(0);
+  } catch (error) {
+    console.error('Error seeding database:', error);
+    process.exit(1);
+  }
+};
+
+seedDB();
