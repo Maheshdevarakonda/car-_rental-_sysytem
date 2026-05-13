@@ -1,6 +1,6 @@
-# 🚗 Smart Car Rental System
+#  Smart Car Rental System
 
-## 📌 Project Overview
+##  Project Overview
 
 The Smart Car Rental System is a full-stack web application designed to simplify and optimize the process of renting cars. This project uses efficient data structures and greedy algorithms to provide the best possible car selection based on price, availability, and customer preferences.
 
@@ -10,7 +10,7 @@ The system helps users easily browse available cars, book vehicles in real time,
 
 # ✨ Features
 
-## 👤 User Features
+##  User Features
 - View available cars
 - Search cars by model, type, or price
 - Book cars instantly
@@ -18,14 +18,14 @@ The system helps users easily browse available cars, book vehicles in real time,
 - View booking history
 - Real-time availability updates
 
-## 🛠️ Admin Features
+##  Admin Features
 - Add new cars
 - Update car details
 - Remove unavailable cars
 - Monitor bookings
 - Manage customer records
 
-## ⚡ System Features
+##  System Features
 - Greedy algorithm for optimized car selection
 - Efficient data handling using data structures
 - Fast booking response time
@@ -34,7 +34,7 @@ The system helps users easily browse available cars, book vehicles in real time,
 
 ---
 
-# 🧠 Greedy Algorithm Concept
+#  Greedy Algorithm Concept
 
 This project uses a greedy algorithm to select the most suitable car based on:
 - Lowest rental price
@@ -48,7 +48,7 @@ The algorithm makes locally optimal choices at every step to ensure:
 
 ---
 
-# 🏗️ Tech Stack
+#  Tech Stack
 
 ## Frontend
 - HTML
@@ -64,7 +64,7 @@ The algorithm makes locally optimal choices at every step to ensure:
 
 ---
 
-# 📂 Project Structure
+#  Project Structure
 
 ```bash
 smart-car-rental-system/
